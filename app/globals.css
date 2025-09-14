@@ -1,0 +1,69 @@
+@import "tailwindcss";
+
+body {
+  background: #000;
+}
+
+@layer utilities {
+  .before-content-none::before {
+    content: "";
+  }
+}
+
+.anima::after {
+  content: '';
+  position: fixed;
+  top: 0rem;
+  left: 0rem;
+  width: calc(100% + 20rem);
+  height: calc(100% + 20rem);
+  background-image: url("/noisybackground.png");
+  opacity: .3;
+  pointer-events: none;
+  transition: .1s;
+  animation: noisyBg 1s steps(2) infinite;
+  
+}
+
+@keyframes noisyBg 
+{
+  0% { transform: translate3d(-4rem, -9rem, 0)}
+  10% { transform: translate3d(-4rem, -6rem, 0)}
+  20% { transform: translate3d(-8rem, -2rem, 0)}
+  30% { transform: translate3d(-9rem, -9rem, 0)}
+  40% { transform: translate3d(-2rem, -7rem, 0)}
+  50% { transform: translate3d(-9rem, -4rem, 0)}
+  60% { transform: translate3d(-2, -6rem, 0)}
+  70% { transform: translate3d(-7rem, -8rem, 0)}
+  80% { transform: translate3d(-9rem, -1rem, 0)}
+  90% { transform: translate3d(-6rem, -5rem, 0)}
+  to { transform: translate3d(-7rem, 0, 0)}
+}
+
+
+
+/**
+*"before:.before-content-none before:-top-40 before:left-40 before:w-[calc(100%+20rem)] before:h-[calc(100%+20rem)]",
+"before:fixed before:bg-img before:opacity-15 pointer-events-none before:animate-noisy-bg"
+*/
+
+/* @theme {
+  --img: url('./noisy-background.png')
+  --animate-noisy-bg: noise 1s steps(2) infinite
+  @keyframes noisy-bg {
+  
+    "0%" { transform: "translated3d(0, 9rem, 0)"}
+    "10%" { tran}
+  }
+} */
+
+/* backgroundImage: {
+  "grain": "url(/noisy-background.png)"
+};
+animation: {
+  "noisy-bg": "noise 1s steps(2) infinite"
+} */
+
+
+
+/* noisy-bg */
