@@ -40,30 +40,52 @@ body {
   to { transform: translate3d(-7rem, 0, 0)}
 }
 
+.my_img_div::before {
+  content: "";
+  position: absolute;
+  bottom: 10%;
+  right: 0;
+  border: 4px solid #00d373;
+  border-radius: 50%;
+}
 
+.my_img_div::after {
+  content: "";
+  position: absolute;
+  top: -8%;
+  left: -8%;
+  width: 115%;
+  height: 115%;
+  background: linear-gradient(to right, #56acff, #00d373);
+  border-radius: 100%;
+  z-index: -1;
+}
 
-/**
-*"before:.before-content-none before:-top-40 before:left-40 before:w-[calc(100%+20rem)] before:h-[calc(100%+20rem)]",
-"before:fixed before:bg-img before:opacity-15 pointer-events-none before:animate-noisy-bg"
-*/
+.my_name {
+  position: absolute;
+  top: 32%;
+  right: 0%;
+  color: whitesmoke;
+  font-size: 20px;
+}
 
-/* @theme {
-  --img: url('./noisy-background.png')
-  --animate-noisy-bg: noise 1s steps(2) infinite
-  @keyframes noisy-bg {
-  
-    "0%" { transform: "translated3d(0, 9rem, 0)"}
-    "10%" { tran}
-  }
-} */
+/* fancy_btn */
 
-/* backgroundImage: {
-  "grain": "url(/noisy-background.png)"
-};
-animation: {
-  "noisy-bg": "noise 1s steps(2) infinite"
-} */
+.fancy_btn {
+  background-image: linear-gradient(
+    135deg, 
+    #00d372, 
+    #56acff 34%, 
+    #7179ef 56%,
+    #d87aca
+    );
+  border-radius: 100px;
+  padding: 0.2vw;
+  max-width: 100%;
+  display: inline-block;
+  transition: 1s;
+}
 
-
-
-/* noisy-bg */
+.fancy_btn_text:hover {
+  transform: scale(7);
+}

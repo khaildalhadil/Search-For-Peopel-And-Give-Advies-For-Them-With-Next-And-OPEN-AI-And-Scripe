@@ -7,6 +7,6 @@ export default function GrainEffect() {
       "fixed top-0 left-0 w-full h-full anima  text-white",
       
     ))}>
-      GrainEffect</div>
+      </div>
   )
 }
