@@ -10,7 +10,7 @@ export default function Card({title, children, className}) {
     ))}>
       <div className="flex flex-col gap-y-6">
         {title && <div><p className="uppercase text-lg">{title}</p></div>}
-        <h1 className="text-center mt-50 text-6xl">من خالد مبرمج ممتاز ؟</h1>
+        <h1 className="text-center mt-50 text-4xl">Search For Your LinkedIn And Get Advise</h1>
         {children}
       </div>
     </div>

@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Bitcount_Prop_Double } from "next/font/google";
 import "./globals.css";
+import Profile from "@/components/ui/Profile";
+import GrainEffect from "@/components/visualEffects/GrainEffect";
+import Cursor from "@/components/cursor/Cursor";
 
 const ricolageGrotesque = Bitcount_Prop_Double({subsets: ["latin"],weight: "400"});
 
@@ -18,7 +21,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <link rel="icon" href="favicon.ico" sizes="any" />
-      <body className={`${ricolageGrotesque.className} antialiased bg-black`}>
+      <body className={`${ricolageGrotesque.className} antialiased bg-[#444]`}>
+        <Cursor />
         {children}
       </body>
     </html>

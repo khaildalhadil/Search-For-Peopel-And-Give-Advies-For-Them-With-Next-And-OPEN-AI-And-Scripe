@@ -1,7 +1,7 @@
 
-export default function FancyButton({text, icon, className}) {
+export default function FancyButton({text, icon, className, hanelClickBtn}) {
   return (
-    <button className={`fancy_btn ${className}`}>
+    <button className={`fancy_btn ${className}`} onClick={hanelClickBtn}>
       <div className="group bg-black rounded-full hover:bg-transparent text-white py-[1vw] px-[2vw] text-3xl cursor-pointer gap-2 flex items-center transition-all duration-75">
         <span>{text}</span>
         <span className="group-hover:translate-x-[.75vw] transition-transform duration-100">{icon}</span>

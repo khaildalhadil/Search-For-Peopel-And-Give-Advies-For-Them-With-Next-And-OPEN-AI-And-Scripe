@@ -2,17 +2,15 @@
 import {motion} from 'framer-motion'
 import { useRef, useState } from 'react'
 
-export default function MagneticWrapper({className, children, yes}) {
+export default function MagneticWrapper({className, children}) {
 
   const ref = useRef(null);
 
   const [position, setPosition] = useState({x: 0, y: 0});
   const {x, y} = position;
-  console.log(position);
 
   function handelMouseMove(event) {
     const {clientX, clientY} = event;
-    // console.log(clientX, clientY)
 
     const boundingR = ref.current?.getBoundingClientRect();
 
@@ -23,9 +21,8 @@ export default function MagneticWrapper({className, children, yes}) {
       const middleX = clientX - (left + width / 2);
       const middelY = clientY - (top + height / 2);
 
-      console.log(middleX, middelY);
 
-      setPosition({x: -middleX * 10, y: -middelY * 10})
+      setPosition({x: middleX * 4, y: middelY * 4})
 
     }
   }

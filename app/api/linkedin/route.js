@@ -1,16 +1,33 @@
 
+export async function POST(request) {
 
 
-export async function GET() {
-
-  // For this example you need the node-fetch npm packages: `npm i node-fetch`
+  const {name} = await request.json();
+  console.log(name)
 
   try {
-    const data = await fetch('https://api.scraperapi.com/?api_key=a7b3cf175a04eff2ec7626958821fbf9&url=https%3A%2F%2Fhttpbin.org%2F')
-    // const jsData = await data.json();
+    console.log("HHHHHHHHHHHHHHHHH")
     
-    console.log(data)
+    const url = `https://api.scrapin.io/v1/enrichment/profile?apikey=${process.env.APILINKDIN}`;
+
+    const options = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        "Access-Control-Allow-Methods": "PUT, POST, PATCH, DELETE, GET"
+      },
+      body: `{"includes":{},"linkedInUrl":"https://www.linkedin.com/in/${name}/"}`
+    };
+
+    
+    const response = await fetch(url, options);
+
+    const data = await response.json();
+
+    return new Response(JSON.stringify(data))
+    
   } catch(err) {
+    console.log("ERRRRRRRRRRRRRRRRRRRRR")
     console.log(err);
   }
   
@@ -45,32 +62,3 @@ export async function GET() {
   
 // }
 
-// export async function GET(req, res) {
-
-//   // const {name} = req;
-//   const name = "Amira Al-Mukhaini"
-//   console.log("Hi")
-
-//   try{
-//     const responseData = await fetch(`https://www.googleapis.com/customsearch/v1?q=site:linkedin.com/in+${name}&key=${process.env.GOOGLE_API_KEY}&cx=${process.env.SEARCH_ENGINE_ID}`)
-
-//     const data = await responseData.json();
-
-//     // console.log(data);
-//     let hasData = Boolean(data.items)
-//     console.log(hasData);
-//     if (!hasData) {
-//       return;
-//     }
-
-//     console.log(data);
-
-//     console.log(data?.items[0]?.link?.split("/")[4]);
-    
-//     // res.json({message: "success", data })
-//   }
-//   catch(err) {
-//     console.log(err)
-//   }
-
-// }
