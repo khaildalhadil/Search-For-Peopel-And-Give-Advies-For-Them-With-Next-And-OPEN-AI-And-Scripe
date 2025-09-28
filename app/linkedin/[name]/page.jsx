@@ -34,14 +34,13 @@ export default function LinkedinData({params}) {
       })
 
       let data = await response.json();
-      console.log(data);
+      // console.log(data);
       setUserData(data);
 
     }
 
     getData();
 
-    isLoadding(false)
   }, [])
 
   
@@ -70,7 +69,7 @@ export default function LinkedinData({params}) {
         
         <div className="bg-[#f9f6f3] max-w-[1300px] m-auto rounded-2xl">
           
-          <div className=" flex-row-reverse md:flex-row-reverse justify-between max-w-[1200px] m-auto py-10 px-5 gap-20">
+          <div className="lg:flex  bg-red-50 max-w-[1200px] m-auto py-10 px-5 gap-20">
             
             <div className="flex-3">
               {userData?.person ? <h1 className="text-6xl font-bold mb-4">Hey I'm <span className="text-amber-700">{userData?.person?.firstName} {userData?.person?.lastName}</span></h1>: <h1 className="text-6xl font-bold mb-4">Loadding <span className="text-amber-700"> The Name ... </span></h1>}
@@ -104,7 +103,7 @@ export default function LinkedinData({params}) {
 
             </div>
 
-            <div  className="flex-2">
+            <div  className="flex-2 justify-self-center">
               {userData?.person?.photoUrl ? <img className="h-full rounded object-contain" src={userData?.person?.photoUrl} alt="user image" />: <p className="w-full text-4xl text-gray-700 text-center">"Loading THe Image..."</p>}
             </div>
 
